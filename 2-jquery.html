@@ -1,0 +1,402 @@
+<!-- 
+1-Learn How Script Tags and Document Ready Work
+
+First, add a script element at the top of your page. Be sure to close it on the following line.
+
+Inside your script element, add this code: $(document).ready(function() { to your script. Then close it on the following line 
+(still inside your script element) with: });
+
+Solution:
+<script>
+    $(document).ready(function () {
+
+    });
+</script>
+-->
+
+<!-- 
+2-Target HTML Elements with Selectors Using jQuery
+
+For example, let's make all of your button elements bounce. Just add this code inside your document ready function:
+
+$("button").addClass("animated bounce");
+
+Solution:
+<script>
+    $(document).ready(function () {
+        $("button").addClass("animated bounce");
+    });
+</script>
+-->
+
+<!-- 
+3-Target Elements by Class Using jQuery
+
+First, let's target your div elements with the class well by using the $(".well") selector.
+
+Note that, just like with CSS declarations, you type a . before the class's name.
+
+Then use jQuery's .addClass() function to add the classes animated and shake.
+
+For example, you could make all the elements with the class text-primary shake by adding the following to your document ready function:
+
+$(".text-primary").addClass("animated shake");  
+
+Solution:
+<script>
+    $(document).ready(function () {
+        $("button").addClass("animated bounce");
+        $(".well").addClass("animated shake");
+    });
+</script>
+-->
+
+<!-- 
+4-Target Elements by id Using jQuery
+
+First target your button element with the id target3 by using the $("#target3") selector.
+
+Note that, just like with CSS declarations, you type a # before the id's name.
+
+Then use jQuery's .addClass() function to add the classes animated and fadeOut.
+
+$("#target6").addClass("animated fadeOut");   
+
+Solution:
+<script>
+    $(document).ready(function () {
+        $("button").addClass("animated bounce");
+        $(".well").addClass("animated shake");
+        $("#target3").addClass("animated fadeOut");
+    });
+</script>
+-->
+
+<!-- 
+5-Delete Your jQuery Functions
+
+Delete all three of these jQuery functions from your document ready function, but leave your document ready function itself intact.
+
+Solution:
+<script>
+    $(document).ready(function () {
+
+    });
+</script>
+-->
+
+<!-- 
+6-Target the Same Element with Multiple jQuery Selectors
+
+Now you know three ways of targeting elements: by type: $("button"), by class: $(".btn"), and by id $("#target1").
+
+Although it is possible to add multiple classes in a single .addClass() call, let's add them to the same element in three separate ways.
+
+Using .addClass(), add only one class at a time to the same element, three different ways:
+
+Add the animated class to all elements with type button.
+
+Add the shake class to all the buttons with class .btn.
+
+Add the btn-primary class to the button with id #target1.
+
+Solution:
+<script>
+    $(document).ready(function () {
+        $("button").addClass("shake");
+        $(".btn").addClass("animated");
+        $("#target1").addClass("btn-primary");
+    });
+</script>
+-->
+
+<!-- 
+7-Remove Classes from an Element with jQuery
+
+In the same way you can add classes to an element with jQuery's addClass() function, you can remove them with jQuery's removeClass() function.
+
+$("#target2").removeClass("btn-default");
+
+Let's remove the btn-default class from all of our button elements.
+
+Solution:
+<script>
+    $(document).ready(function () {
+        $("button").addClass("animated bounce");
+        $(".well").addClass("animated shake");
+        $("#target3").addClass("animated fadeOut");
+        $("button").removeClass("btn-default");
+    });
+</script>
+-->
+
+<!-- 
+8-Change the CSS of an Element Using jQuery
+
+jQuery has a function called .css() that allows you to change the CSS of an element.
+
+$("#target1").css("color", "blue");
+
+Delete your jQuery selectors, leaving an empty document ready function.
+
+Select target1 and change its color to red.
+
+Solution:
+<script>
+    $(document).ready(function () {
+        $("#target1").css("color", "red");
+    });
+</script>
+-->
+
+<!-- 
+9-Disable an Element Using jQuery
+
+When you disable a button, it will become grayed-out and can no longer be clicked.
+
+jQuery has a function called .prop() that allows you to adjust the properties of elements.
+
+$("button").prop("disabled", true);
+
+Disable only the target1 button.
+
+Solution:
+<script>
+    $(document).ready(function () {
+        $("#target1").css("color", "red");
+        $("#target1").prop("disabled", "true");
+
+    });
+</script>
+-->
+
+<!-- 
+10-Change Text Inside an Element Using jQuery
+
+jQuery has a function called .html() that lets you add HTML tags and text within an element. Any content previously within the element will 
+be completely replaced with the content you provide using this function.
+
+$("h3").html("<em>jQuery Playground</em>");
+
+jQuery also has a similar function called .text() that only alters text without adding tags. In other words, this function will not evaluate 
+any HTML tags passed to it, but will instead treat it as the text you want to replace the existing content with.
+
+Change the button with id target4 by emphasizing its text.
+
+View our news article for <em> to learn the difference between <i> and <em> and their uses.
+
+Solution:
+<script>
+    $(document).ready(function () {
+        $("#target1").css("color", "red");
+        $("#target4").html("<em>#target4</em>");
+    });
+</script>
+-->
+
+<!-- 
+11-Remove an Element Using jQuery
+
+jQuery has a function called .remove() that will remove an HTML element entirely
+
+Remove the #target4 element from the page by using the .remove() function. 
+
+Solution:
+<script>
+    $(document).ready(function () {
+        $("#target1").css("color", "red");
+        $("#target1").prop("disabled", true);
+        $("#target4").remove();
+    });
+</script>
+-->
+
+<!-- 
+12-Use appendTo to Move Elements with jQuery
+
+jQuery has a function called appendTo() that allows you to select HTML elements and append them to another element.
+
+For example, if we wanted to move target4 from our right well to our left well, we would use:
+
+$("#target4").appendTo("#left-well");
+
+Move your target2 element from your left-well to your right-well. 
+
+Solution:
+<script>
+    $(document).ready(function () {
+        $("#target1").css("color", "red");
+        $("#target1").prop("disabled", true);
+        $("#target4").remove();
+        $("#target2").appendTo("#right-well");
+    });
+</script>
+-->
+
+<!-- 
+13-Clone an Element Using jQuery
+
+jQuery has a function called clone() that makes a copy of an element.
+
+For example, if we wanted to copy target2 from our left-well to our right-well, we would use:
+
+$("#target2").clone().appendTo("#right-well");
+
+Clone your target5 element and append it to your left-well.
+
+Solution:
+<script>
+    $(document).ready(function () {
+        $("#target1").css("color", "red");
+        $("#target1").prop("disabled", true);
+        $("#target4").remove();
+        $("#target2").appendTo("#right-well");
+        $("#target5").clone().appendTo("#left-well");
+    });
+</script>
+-->
+
+<!-- 
+14-Target the Parent of an Element Using jQuery
+
+For example, your jQuery Playground h3 element has the parent element of <div class="container-fluid">, which itself has the parent body.
+
+jQuery has a function called parent() that allows you to access the parent of whichever element you've selected.
+
+$("#left-well").parent().css("background-color", "blue")
+
+Give the parent of the #target1 element a background-color of red.
+
+Solution:
+<script>
+    $(document).ready(function () {
+        $("#target1").css("color", "red");
+        $("#target1").prop("disabled", true);
+        $("#target4").remove();
+        $("#target2").appendTo("#right-well");
+        $("#target5").clone().appendTo("#left-well");
+        $("#target1").parent().css("background-color", "red");
+    });
+</script>
+-->
+
+<!-- 
+15-Target the Children of an Element Using jQuery
+
+jQuery has a function called children() that allows you to access the children of whichever element you've selected.
+
+$("#left-well").children().css("color", "blue")
+
+Give all the children of your right-well element the color orange.  
+
+Solution:
+<script>
+    $(document).ready(function () {
+        $("#target1").css("color", "red");
+        $("#target1").prop("disabled", true);
+        $("#target4").remove();
+        $("#target2").appendTo("#right-well");
+        $("#target5").clone().appendTo("#left-well");
+        $("#target1").parent().css("background-color", "red");
+        $("#right-well").children().css("color", "orange");
+    });
+</script>
+-->
+
+<!-- 
+16-Target a Specific Child of an Element Using jQuery
+
+jQuery uses CSS Selectors to target elements. The target:nth-child(n) CSS selector allows you to select all the nth elements with the target 
+class or element type.
+
+$(".target:nth-child(3)").addClass("animated bounce");
+
+Make the second child in each of your well elements bounce. You must select the elements' children with the target class.  
+
+Solution:
+<script>
+    $(document).ready(function () {
+        $("#target1").css("color", "red");
+        $("#target1").prop("disabled", true);
+        $("#target4").remove();
+        $("#target2").appendTo("#right-well");
+        $("#target5").clone().appendTo("#left-well");
+        $("#target1").parent().css("background-color", "red");
+        $("#right-well").children().css("color", "orange");
+        $(".target:nth-child(2)").addClass("animated bounce");
+    });
+</script>
+-->
+
+<!-- 
+17-Target Even Elements Using jQuery
+
+Note that jQuery is zero-indexed which means the first element in a selection has a position of 0. This can be a little confusing as, 
+counter-intuitively, :odd selects the second element (position 1), fourth element (position 3), and so on.
+
+$(".target:odd").addClass("animated shake");
+
+Try selecting all the even target elements and giving them the classes of animated and shake. Remember that even refers to the position of 
+elements with a zero-based system in mind.  
+
+Solution:
+<script>
+    $(document).ready(function () {
+        $("#target1").css("color", "red");
+        $("#target1").prop("disabled", true);
+        $("#target4").remove();
+        $("#target2").appendTo("#right-well");
+        $("#target5").clone().appendTo("#left-well");
+        $("#target1").parent().css("background-color", "red");
+        $("#right-well").children().css("color", "orange");
+        $("#left-well").children().css("color", "green");
+        $(".target:nth-child(2)").addClass("animated bounce");
+        $(".target:even").addClass("animated shake");
+    });
+</script>
+-->
+
+<!-- 
+18-Use jQuery to Modify the Entire Page
+
+jQuery can target the body element as well.
+
+But let's do something more dramatic. Add the classes animated and hinge to your body element.   
+
+Solution:
+<script>
+    $(document).ready(function () {
+        $("#target1").css("color", "red");
+        $("#target1").prop("disabled", true);
+        $("#target4").remove();
+        $("#target2").appendTo("#right-well");
+        $("#target5").clone().appendTo("#left-well");
+        $("#target1").parent().css("background-color", "red");
+        $("#right-well").children().css("color", "orange");
+        $("#left-well").children().css("color", "green");
+        $(".target:nth-child(2)").addClass("animated bounce");
+        $(".target:even").addClass("animated shake");
+        $("body").addClass("animated hinge");
+    });
+</script>
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
